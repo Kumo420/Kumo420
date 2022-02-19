@@ -1,0 +1,82 @@
+#include <iostream>
+#include <cstdlib> //used for rand()
+#include <ctime> //used for srand(time())
+using namespace std;
+
+/* How to play
+1.) hit run
+2.) type rock, paper, or scissors
+3.) hit sumbit
+4.) read the output for the result
+WARNING!!! do NOT capitalize rock, paper, or scissors */
+
+int main() {
+
+    srand(time(0)); //uses systems time to make random number
+
+    string player;
+    int comp = 1 + (rand() % 3); //picks a randome number between 0 and 2 based off srand and adds 1
+    
+    cin >> player; //players choice
+    
+    
+    if (player == "rock") {
+        
+        if (comp == 1) {
+            
+            cout << "Rock! It's a tie";
+        }
+        else if (comp == 2) {
+            
+            cout << "paper! I win!";
+            
+        }
+        else {
+            
+            cout << "Scissors! You win!";
+        }
+        
+    }
+    
+    else if (player == "paper") {
+        
+        if (comp == 1) {
+            
+            cout << "Rock! You win!";
+        }
+        else if (comp == 2) {
+            
+            cout << "paper! It's a tie!";
+            
+        }
+        else {
+            
+            cout << "Scissors! I win!";
+        }
+        
+    }
+    
+    else if (player == "scissors") {
+        
+        if (comp == 1) {
+            
+            cout << "Rock! I win";
+        }
+        else if (comp == 2) {
+            
+            cout << "paper! You win!";
+            
+        }
+        else {
+            
+            cout << "Scissors! It's a tie!";
+        }
+        
+    }
+    
+    else {
+        cout << "invalid choice";
+    }
+    return 0;
+
+}
